@@ -1,3 +1,4 @@
+require "omniauth-facebook"
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -8,6 +9,15 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '930363f660d8a7f249cd71dd5b733c2d06dbbdf3b64c09f7073961a5bf34698d4b578f783d1dd5070b9787e41f8bea18c222580af2b0e2e24998321c18a33b3c'
+  # config.secret_key = 'xxxxxxxxx'
+
+  config.omniauth :facebook,
+    ENV['FACEBOOK_KEY'],
+    ENV['FACEBOOK_SECRET'],
+    :scope => 'email',
+    :display => 'popup',
+    :provider_ignores_state => true
+  # config.omniauth :facebook, '271666723189951', '1ff008d11f28e72e3a749074bc019111', callback_url: "https://pokeymongoshow.herokuapp.com/users/omniauth_callbacks"
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -248,7 +258,6 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :facebook, '271666723189951', '1ff008d11f28e72e3a749074bc019111', callback_url: "https://pokeymongoshow.herokuapp.com/users/omniauth_callbacks", scope: 'home,index'
 
 
   # ==> Warden configuration

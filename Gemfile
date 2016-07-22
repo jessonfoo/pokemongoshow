@@ -47,6 +47,7 @@ end
 gem 'devise'
 gem 'hirb'
 gem 'awesome_print'
+gem 'figaro'
 gem 'bootstrap-sass'
 gem 'omniauth'
 gem 'omniauth-facebook'
