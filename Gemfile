@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 
+# Turbolinks to fix heroku
+gem 'turbolinks'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7'
 # Use postgresql as the database for Active Record
