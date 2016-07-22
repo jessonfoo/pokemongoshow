@@ -1,7 +1,7 @@
 class UserController < ApplicationController
+
+	before_action :authenticate_member!
+
   def index
-    if current_user
-      @user = current_user
-    end
   end
 end

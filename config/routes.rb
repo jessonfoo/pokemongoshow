@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
+  root 'users#index'
   get 'comments/create'
 
   get 'user/srs'
 
-  root 'users#srs'
-  devise_for :users
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  # devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks",:user => "user#index" }
   get 'home/index'
   post '/auth/facebook/callback' => 'user#facebook'
 
