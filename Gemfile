@@ -50,5 +50,10 @@ gem 'awesome_print'
 gem 'figaro'
 gem 'bootstrap-sass'
 gem 'omniauth'
+
 gem 'omniauth-facebook'
+gem 'facebook_oauth'
 gem "omniauth-google-oauth2"
+
+gem 'carrierwave_direct'
+gem 'remotipart', '~> 1.2'

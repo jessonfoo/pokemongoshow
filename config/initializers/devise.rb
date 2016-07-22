@@ -10,7 +10,6 @@ Devise.setup do |config|
   # config.secret_key = '930363f660d8a7f249cd71dd5b733c2d06dbbdf3b64c09f7073961a5bf34698d4b578f783d1dd5070b9787e41f8bea18c222580af2b0e2e24998321c18a33b3c'
   # config.secret_key = 'xxxxxxxxx'
 
-  config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'], :display => 'popup', :provider_ignores_state => true,  callback_url: "/users/omniauth_callbacks"
   # config.omniauth :facebook, '271666723189951', '1ff008d11f28e72e3a749074bc019111', callback_url: "/users/omniauth_callbacks"
 
   # ==> Mailer Configuration
@@ -252,7 +251,8 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-
+  # config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'], :display => 'popup', :provider_ignores_state => true,  callback_url: "http:localhost/users/omniauth_callbacks"
+  config.omniauth :facebook, ENV['FB_TEST_ID'], ENV['FB_TEST_SECRET'], :display => 'popup', :provider_ignores_state => true,  callback_url: "http://localhost:3000/users/omniauth_callbacks"
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
